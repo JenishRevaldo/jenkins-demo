@@ -24,9 +24,6 @@ This repository provides a guide and configuration files to set up a local Conti
 4. **Jenkins Installation**: Set up Jenkins on the instance.
 
     ```bash
-    # Import Jenkins Repository Key
-    curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
-
     # Add Jenkins Repository to Sources List
     echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 
@@ -34,6 +31,7 @@ This repository provides a guide and configuration files to set up a local Conti
     sudo apt-get update
     sudo apt-get install jenkins
     ```
+    if the above installtion doesn't work, get the recent release installation guide from jenkins documentation.
 
 5. **Firewall Configuration**: Allow traffic on port 8080 for Jenkins, SSH connections, and port 8000 for container communication.
 
